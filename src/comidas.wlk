@@ -2,7 +2,7 @@ class Comida {
 	
 	method peso()
 	method valoracion()
-	method esAptoVegetariano()	
+	method esAptoVegetariano()
 	method esAbundante() { return self.peso() > 250 } 
 }
 
