@@ -3,9 +3,30 @@ import comensales.*
 import cocina.*
 
 test "Comidas" {
-	asserts.that()
+	
+	// valoracion hambuguesa de carne
+	const unaHamburguesaCarne = new HamburguesasCarne(tipoPan=panCasero)
+	assert.equals(80, unaHamburguesaCarne.valoracion())
+
+	// valoracion hambuguesa de vegetariana con masa madres
+	const unaHamburguesaVegetariana = new HamburguesasVegetarianas(tipoPan=panMasaMadre, legumbreUtilizada='garbanzos')
+	assert.equals(122, unaHamburguesaVegetariana.valoracion())
+
+	// valoracion de provoleta
+	const unaProvoleta = new Provoleta(peso=190, tieneEspecias=true)
+	assert.that(unaProvoleta.esEspecial())
+
+	// parrillada de asado, entraña y chorizo
+	const unaParrillada = new Parrillada(cortesPedidos=[new CortesCarne(nombre="asado", calidad=10, peso=250), new CortesCarne(nombre='entraña', calidad=7, peso=200), new CortesCarne(nombre='chorizo', calidad=8, peso=50)])
+	assert.equals(147, unaParrillada.valoracion())
+
 }
 
 test "Comensales" {
-	
+	// un vegetariano
+	const unaProvoleta = new Provoleta(peso=190, tieneEspecias=true)
+	const unaHamburguesaVegetariana = new HamburguesasVegetarianas(tipoPan=panMasaMadre, legumbreUtilizada='garbanzos')
+	const otraHamburguesaVegetariana = new HamburguesasVegetarianas(tipoPan=panMasaMadre, legumbreUtilizada='garbanzos')
+	const unVegetariano = new Vegetariano(comidas=[unaProvoleta, unaHamburguesaVegetariana, unaHamburguesaVegetariana], peso=68500)
+	assert.that(unVegetariano.satisfecho())	
 }
