@@ -28,5 +28,8 @@ test "Comensales" {
 	const unaHamburguesaVegetariana = new HamburguesasVegetarianas(tipoPan=panMasaMadre, legumbreUtilizada='garbanzos')
 	const otraHamburguesaVegetariana = new HamburguesasVegetarianas(tipoPan=panMasaMadre, legumbreUtilizada='garbanzos')
 	const unVegetariano = new Vegetariano(comidas=[unaProvoleta, unaHamburguesaVegetariana, unaHamburguesaVegetariana], peso=68500)
-	assert.that(unVegetariano.satisfecho())	
+	assert.that(unVegetariano.satisfecho())
+	
+	// un comensal popular
+		
 }
